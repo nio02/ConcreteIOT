@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcreteIOT.Api", "ConcreteIOT.Api\ConcreteIOT.Api.csproj", "{0C55DA97-68CA-4EFF-97BC-A4059EA5BA33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcreteIOT.Application", "ConcreteIOT.Application\ConcreteIOT.Application.csproj", "{C1BDF759-3B91-4AFB-BC4D-C9F9025F03F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcreteIOT.Infrastructure", "ConcreteIOT.Infrastructure\ConcreteIOT.Infrastructure.csproj", "{370F02B8-A397-453A-9D89-62CFA567E723}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C55DA97-68CA-4EFF-97BC-A4059EA5BA33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C55DA97-68CA-4EFF-97BC-A4059EA5BA33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C55DA97-68CA-4EFF-97BC-A4059EA5BA33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C55DA97-68CA-4EFF-97BC-A4059EA5BA33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1BDF759-3B91-4AFB-BC4D-C9F9025F03F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1BDF759-3B91-4AFB-BC4D-C9F9025F03F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1BDF759-3B91-4AFB-BC4D-C9F9025F03F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1BDF759-3B91-4AFB-BC4D-C9F9025F03F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{370F02B8-A397-453A-9D89-62CFA567E723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{370F02B8-A397-453A-9D89-62CFA567E723}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{370F02B8-A397-453A-9D89-62CFA567E723}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{370F02B8-A397-453A-9D89-62CFA567E723}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
