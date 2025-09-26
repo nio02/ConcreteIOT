@@ -8,4 +8,4 @@ services:
       - POSTGRES_PASSWORD=devPass1
       - POSTGRES_DB=concreteiot
     ports:
-      - '5432:5432'
+      - '5431:5432'
