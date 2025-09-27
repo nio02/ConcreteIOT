@@ -43,6 +43,29 @@ namespace ConcreteIOT.Infrastructure.Migrations
                     b.ToTable("ConcreteMixes");
                 });
 
+            modelBuilder.Entity("ConcreteIOT.Application.Models.DataSet", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<double>("DeltaTime")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("TempCore")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("TempSurf")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DataSets");
+                });
+
             modelBuilder.Entity("ConcreteIOT.Application.Models.Element", b =>
                 {
                     b.Property<Guid>("Id")
@@ -65,7 +88,6 @@ namespace ConcreteIOT.Infrastructure.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Company")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
@@ -91,10 +113,17 @@ namespace ConcreteIOT.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Role")
-                        .HasColumnType("integer");
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(6)
+                        .HasColumnType("character varying(6)")
+                        .HasDefaultValue("CLIENT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.ToTable("Users");
                 });

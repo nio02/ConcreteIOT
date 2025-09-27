@@ -26,6 +26,21 @@ namespace ConcreteIOT.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DataSets",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    DateTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    TempCore = table.Column<double>(type: "double precision", nullable: false),
+                    TempSurf = table.Column<double>(type: "double precision", nullable: false),
+                    DeltaTime = table.Column<double>(type: "double precision", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DataSets", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Elements",
                 columns: table => new
                 {
@@ -43,7 +58,7 @@ namespace ConcreteIOT.Infrastructure.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
-                    Company = table.Column<string>(type: "text", nullable: false)
+                    Company = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -69,12 +84,18 @@ namespace ConcreteIOT.Infrastructure.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Email = table.Column<string>(type: "text", nullable: false),
                     Password = table.Column<string>(type: "text", nullable: false),
-                    Role = table.Column<int>(type: "integer", nullable: false)
+                    Role = table.Column<string>(type: "character varying(6)", maxLength: 6, nullable: false, defaultValue: "CLIENT")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_Email",
+                table: "Users",
+                column: "Email",
+                unique: true);
         }
 
         /// <inheritdoc />
@@ -82,6 +103,9 @@ namespace ConcreteIOT.Infrastructure.Migrations
         {
             migrationBuilder.DropTable(
                 name: "ConcreteMixes");
+
+            migrationBuilder.DropTable(
+                name: "DataSets");
 
             migrationBuilder.DropTable(
                 name: "Elements");

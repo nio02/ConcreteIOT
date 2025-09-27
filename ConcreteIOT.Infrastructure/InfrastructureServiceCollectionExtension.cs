@@ -1,4 +1,6 @@
+using ConcreteIOT.Application.IRepository;
 using ConcreteIOT.Infrastructure.Data;
+using ConcreteIOT.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +18,8 @@ public static class InfrastructureServiceCollectionExtension
         services.AddDbContext<Context>(options =>
             options.UseNpgsql(connectionString));
 
+        services.AddScoped<IUserRepository, UserRepository>();
+        
         return services;
     }
 }

@@ -16,10 +16,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
+        <ProjectReference Include="..\ConcreteIOT.Infrastructure\ConcreteIOT.Infrastructure.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\ConcreteIOT.Infrastructure\ConcreteIOT.Infrastructure.csproj" />
+        <ProjectReference Include="..\ConcreteIOT.Application\ConcreteIOT.Application.csproj" />
     </ItemGroup>
 </Project>
