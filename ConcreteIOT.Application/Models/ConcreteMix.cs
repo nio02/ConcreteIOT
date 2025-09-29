@@ -6,4 +6,9 @@ public class ConcreteMix
     public string Name { get; set; }
     public double MixA { get; set; }
     public double MixB { get; set; }
+    
+    public Guid ProjectId { get; set; }
+    public required Project Project { get; set; }
+    
+    public ICollection<Element> Elements { get; set; } = [];
 }

@@ -14,10 +14,12 @@ public class Context : DbContext
     public DbSet<ConcreteMix> ConcreteMixes { get; set; }
     public DbSet<Element> Elements { get; set; }
     public DbSet<DataSet> DataSets { get; set; }
+    public DbSet<Device> Devices { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new UserMapping());
+        modelBuilder.ApplyConfiguration(new DeviceMapping());
         modelBuilder.ApplyConfiguration(new ProjectMapping());
         modelBuilder.ApplyConfiguration(new UserProjectMapping());
         modelBuilder.ApplyConfiguration(new ConcreteMixMapping());
