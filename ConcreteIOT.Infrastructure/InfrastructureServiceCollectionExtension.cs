@@ -19,6 +19,7 @@ public static class InfrastructureServiceCollectionExtension
             options.UseNpgsql(connectionString));
 
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IDeviceRepository, DeviceRepository>();
         
         return services;
     }

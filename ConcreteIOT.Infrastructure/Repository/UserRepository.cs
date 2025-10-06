@@ -41,9 +41,9 @@ public class UserRepository : IUserRepository
         existingUser.Email = user.Email;
         existingUser.Password = user.Password;
 
-        await _context.SaveChangesAsync();
+        var result = await _context.SaveChangesAsync();
 
-        return true;
+        return result > 0;
     }
 
     public async Task<bool> DeleteAsync(Guid id)
@@ -54,9 +54,9 @@ public class UserRepository : IUserRepository
 
         _context.Users.Remove(existingUser);
 
-        await _context.SaveChangesAsync();
+        var result = await _context.SaveChangesAsync();
 
-        return true;
+        return result > 0;
     }
 
     public async Task<bool> ExistByEmail(string email)
