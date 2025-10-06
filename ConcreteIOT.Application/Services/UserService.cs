@@ -14,6 +14,14 @@ public class UserService : IUserService
 
     public async Task<bool> CreateAsync(User user)
     {
+        var userExists = await _userRepository.ExistByEmail(user.Email);
+        if (userExists)
+        {
+            throw new InvalidOperationException("A user with this email already exists.");
+        }
+        
+        user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+        
         return await _userRepository.CreateAsync(user);
     }
 

@@ -16,6 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\ConcreteIOT.Contracts\ConcreteIOT.Contracts.csproj" />
         <ProjectReference Include="..\ConcreteIOT.Infrastructure\ConcreteIOT.Infrastructure.csproj" />
     </ItemGroup>
 

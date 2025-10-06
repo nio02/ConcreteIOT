@@ -1,5 +1,7 @@
+using ConcreteIOT.Api.Mapping;
 using ConcreteIOT.Application.Models;
 using ConcreteIOT.Application.Services;
+using ConcreteIOT.Contracts.Requests;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ConcreteIOT.Api.Controllers;
@@ -15,13 +17,17 @@ public class UserController : ControllerBase
     }
     
     [HttpPost(ApiEndpoints.Users.Create)]
-    public async Task<IActionResult> Create([FromBody] User user)
+    public async Task<IActionResult> Create([FromBody] CreateUserRequest request)
     {
+        var user = request.MapToUser();
+        
         var created = await _userService.CreateAsync(user);
         if (!created)
             return BadRequest("User could not be created");
-
-        return CreatedAtAction(nameof(Get), new { id = user.Id }, user);
+        
+        var response = user.MapToResponse();
+        
+        return CreatedAtAction(nameof(Get), new { id = user.Id }, response);
     }
     
     [HttpGet(ApiEndpoints.Users.Get)]
