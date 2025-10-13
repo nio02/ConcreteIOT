@@ -19,6 +19,8 @@ public static class InfrastructureServiceCollectionExtension
             options.UseNpgsql(connectionString));
 
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IProjectRepository, ProjectRepository>();
+        services.AddScoped<IUserProjectRepository, UserProjectRepository>();
         services.AddScoped<IDeviceRepository, DeviceRepository>();
         
         return services;

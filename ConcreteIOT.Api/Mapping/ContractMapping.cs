@@ -25,4 +25,23 @@ public static class ContractMapping
             Email = user.Email
         };
     }
+    //Just for development
+    public static Project MapToProject(this CreateProjectRequest request)
+    {
+        return new Project
+        {
+            Id = Guid.NewGuid(),
+            Name = request.Name,
+            Company = request.Company
+        };
+    }
+
+    public static ProjectResponse MapToResponse(this Project project)
+    {
+        return new ProjectResponse
+        {
+            Name = project.Name,
+            Company = project.Company
+        };
+    }
 }
