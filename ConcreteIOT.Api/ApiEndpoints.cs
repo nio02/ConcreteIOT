@@ -26,6 +26,13 @@ public class ApiEndpoints
         public const string Delete = $"{Base}/{{id:guid}}";
     }
     
+    public static class UserProject
+    {
+        private const string Base = $"{ApiBase}/projects";
+
+        public const string AddVisitor = $"{Base}/{{projectId:guid}}/visitors";
+    }
+    
     public static class Devices
     {
         private const string Base = $"{ApiBase}/devices";
