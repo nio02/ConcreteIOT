@@ -10,6 +10,7 @@ public static class ApplicationServiceCollectionExtension
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IProjectService, ProjectService>();
         services.AddScoped<IUserProjectService, UserProjectService>();
+        services.AddScoped<IConcreteMixService, ConcreteMixService>();
         services.AddScoped<IDeviceService, DeviceService>();
         return services;
     }

@@ -44,4 +44,26 @@ public static class ContractMapping
             Company = project.Company
         };
     }
+
+    public static ConcreteMix MapToConcreteMix(this CreateConcreteMixRequest request)
+    {
+        return new ConcreteMix
+        {
+            Id = Guid.NewGuid(),
+            Name = request.Name,
+            MixA = request.MixA,
+            MixB = request.MixB
+        };
+    }
+
+    public static ConcreteMixResponse MapToResponse(this ConcreteMix mix)
+    {
+        return new ConcreteMixResponse
+        {
+            Id = mix.Id,
+            Name = mix.Name,
+            MixA = mix.MixA,
+            MixB = mix.MixB
+        };
+    }
 }

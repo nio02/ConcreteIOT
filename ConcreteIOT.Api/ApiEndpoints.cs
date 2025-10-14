@@ -33,6 +33,17 @@ public class ApiEndpoints
         public const string AddVisitor = $"{Base}/{{projectId:guid}}/visitors";
     }
     
+    public static class ConcreteMix
+    {
+        private const string Base = $"{ApiBase}/projects";
+
+        public const string Create = $"{Base}/{{projectId:guid}}/mixes";
+        public const string Get = $"{Base}/{{projectId:guid}}/mixes/{{id:guid}}";
+        public const string GetAll = $"{Base}/{{projectId:guid}}/mixes";
+        public const string Update = $"{Base}/{{projectId:guid}}/mixes/{{id:guid}}";
+        public const string Delete = $"{Base}/{{projectId:guid}}/mixes/{{id:guid}}";
+    }
+    
     public static class Devices
     {
         private const string Base = $"{ApiBase}/devices";
